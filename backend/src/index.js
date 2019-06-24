@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -5,7 +7,7 @@ const cors = require('cors');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@clusteapi-xdpan.mongodb.net/omnistack?retryWrites=true&w=majority',
+mongoose.connect(process.env.KEYMONGODB,
 {
     useNewUrlParser: true,
 })
